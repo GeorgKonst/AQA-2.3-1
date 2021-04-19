@@ -36,21 +36,21 @@ public class SelenideTest {
 
 
     }
-
-
-    @Test
-    void shouldValidForm() {
-        open("http://localhost:9999/");
-        $("[placeholder='Город']").setValue(getCity());
-        $("[placeholder='Дата встречи']").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-        $("[placeholder='Дата встречи']").setValue(date());
-        $("[name='name']").setValue(getName());
-        $("[name='phone']").setValue(getPhone());
-        $(".checkbox").click();
-        $(".button").click();
-        $(byText("Успешно!")).shouldBe(Condition.visible, Duration.ofSeconds(15));
-        $(withText(date())).shouldBe(Condition.text(date()));
-    }
+//
+//
+//    @Test
+//    void shouldValidForm() {
+//        open("http://localhost:9999/");
+//        $("[placeholder='Город']").setValue(getCity());
+//        $("[placeholder='Дата встречи']").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+//        $("[placeholder='Дата встречи']").setValue(date());
+//        $("[name='name']").setValue(getName());
+//        $("[name='phone']").setValue(getPhone());
+//        $(".checkbox").click();
+//        $(".button").click();
+//        $(byText("Успешно!")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+//        $(withText(date())).shouldBe(Condition.text(date()));
+//    }
 
     @Test
     void shouldEmptyForm() {
