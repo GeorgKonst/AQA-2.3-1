@@ -36,21 +36,21 @@ public class SelenideTest {
 
 
     }
-//
-//
-//    @Test
-//    void shouldValidForm() {
-//        open("http://localhost:9999/");
-//        $("[placeholder='Город']").setValue(getCity());
-//        $("[placeholder='Дата встречи']").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-//        $("[placeholder='Дата встречи']").setValue(date());
-//        $("[name='name']").setValue(getName());
-//        $("[name='phone']").setValue(getPhone());
-//        $(".checkbox").click();
-//        $(".button").click();
-//        $(byText("Успешно!")).shouldBe(Condition.visible, Duration.ofSeconds(15));
-//        $(withText(date())).shouldBe(Condition.text(date()));
-//    }
+
+
+    @Test
+    void shouldValidForm() {
+        open("http://localhost:9999/");
+        $("[placeholder='Город']").setValue(getCity());
+        $("[placeholder='Дата встречи']").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+        $("[placeholder='Дата встречи']").setValue(date());
+        $("[name='name']").setValue(getName());
+        $("[name='phone']").setValue(getPhone());
+        $(".checkbox").click();
+        $(".button").click();
+        $(byText("Успешно!")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+        $(withText(date())).shouldBe(Condition.text(date()));
+    }
 
     @Test
     void shouldEmptyForm() {
@@ -97,18 +97,18 @@ public class SelenideTest {
         $(byText("Заказ на выбранную дату невозможен")).shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 
-    @Test
-    void shouldNotValidTel() {
-        open("http://localhost:9999/");
-        $("[placeholder='Город']").setValue(getCity());
-        $("[placeholder='Дата встречи']").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-        $("[placeholder='Дата встречи']").setValue(date());
-        $("[name='name']").setValue(getName());
-        $("[name='phone']").setValue("+7910999999");
-        $(".checkbox").click();
-        $(".button").click();
-        $(withText("Телефон указан неверно. Должно быть 11 цифр")).shouldBe(Condition.visible, Duration.ofSeconds(15));
-    }
+//    @Test
+//    void shouldNotValidTel() {
+//        open("http://localhost:9999/");
+//        $("[placeholder='Город']").setValue(getCity());
+//        $("[placeholder='Дата встречи']").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+//        $("[placeholder='Дата встречи']").setValue(date());
+//        $("[name='name']").setValue(getName());
+//        $("[name='phone']").setValue("+7910999999");
+//        $(".checkbox").click();
+//        $(".button").click();
+//        $(withText("Телефон указан неверно. Должно быть 11 цифр")).shouldBe(Condition.visible, Duration.ofSeconds(15));
+//    }
 
     @Test
     void shouldNotClickCheckbox() {
